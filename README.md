@@ -1,7 +1,7 @@
 # Keypoint Promptable Re-Identification
 This project in build on top of [BPBreID](https://github.com/VlSomers/bpbreid).
-The full codebase will be released very shortly.
 Below are the instructions to download our proposed Occluded-PoseTrack Re-Identification benchmark and the annotations for four existing datasets.
+The full codebase to reproduce the experiments will be released very shortly.
 
 ## Download the Occluded-PoseTrack Re-Identification dataset
 Our proposed dataset is derived from the [PoseTrack21](https://github.com/anDoer/PoseTrack21) dataset for multi-person pose tracking in videos.
