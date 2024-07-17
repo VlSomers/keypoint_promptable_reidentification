@@ -14,7 +14,7 @@ Our proposed dataset is derived from the [PoseTrack21](https://github.com/anDoer
 The original PoseTrack21 dataset should be first downloaded following these [instructions](https://github.com/anDoer/PoseTrack21?tab=readme-ov-file#how-to-get-the-dataset).
 We also provide json files that specify how the pose tracking annotations should be turned into our ReID dataset.
 These json files describes which detections (bounding boxes + keypoints) should be used as train/query/gallery samples.
-We provide these files and the related human parsing labels on [GDrive]().
+We provide these files and the related human parsing labels on [GDrive](https://drive.google.com/file/d/1n5rRx16D6Y9UpO-6nFD5yqAIYgIcfuPc/view?usp=sharing).
 These files are read by our codebase to extract the ReID dataset from the pose tracking one and save the corresponding image crops on disk before launching the ReID experiment.
 They can also be integrated in any external codebase in a similar maner.
 The human parsing labels were generated using [SAM](https://github.com/facebookresearch/segment-anything) and [PifPaf](https://github.com/openpifpaf/openpifpaf), more details are provided in the [paper]().
@@ -22,7 +22,7 @@ More details are provided in the paper.
 
 
 ## Download annotations for extisting datasets
-You can download the keypoint and human parsing labels on [GDrive](). 
+You can download the keypoint and human parsing labels on [GDrive](https://drive.google.com/drive/folders/15_RdnS1nr3iAYcnCibXmbT1LxU2n8PHZ?usp=sharing). 
 The human parsing labels (.npy) were introduced by [BPBreID](https://github.com/VlSomers/bpbreid).
 The keypoint annotations (.json) were generated with the [PifPaf](https://github.com/openpifpaf/openpifpaf) pose estimation model.
 When multiple skeletons are detected within a single bounding box, the one with its head closer to the top center part of the image is considered as the ReID target, and marked with an 'is_target' attribute.
@@ -52,6 +52,6 @@ Make also sure to set `data.root` config to your dataset root directory path, i.
 
 
 ## Download the pre-trained models
-We also provide some [state-of-the-art pre-trained models]() based on the Swin backbone.
+We also provide some [state-of-the-art pre-trained models](https://drive.google.com/drive/folders/1t4wXc2c3qlFaqUCifAlc_OPrFwvb7peD?usp=sharing) based on the Swin backbone.
 You can put the downloaded weights under a 'pretrained_models/' directory or specify the path to the pre-trained weights using the `model.load_weights` parameter in the `yaml` config.
 The configuration used to obtain the pre-trained weights is also saved within the `.pth` file: make sure to set `model.load_config` to `True` so that the parameters under the `model.bpbreid` part of the configuration tree will be loaded from this file.
