@@ -1,5 +1,4 @@
 # Keypoint Promptable Re-Identification
-_Work in progress_
 
 This project in build on top of [BPBreID](https://github.com/VlSomers/bpbreid).
 Below are the instructions to download our proposed Occluded-PoseTrack Re-Identification benchmark and the annotations for four existing datasets.
