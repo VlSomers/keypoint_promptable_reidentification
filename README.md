@@ -9,8 +9,8 @@ The full codebase to reproduce the experiments will be released very shortly.
 </p>
 
 ## Download the Occluded-PoseTrack Re-Identification dataset
-- **Download PoseTrack21**: [Instructions](https://github.com/anDoer/PoseTrack21?tab=readme-ov-file#how-to-get-the-dataset).
-- **Download Occluded-PoseTrack ReID annotations**: [GDrive](https://drive.google.com/file/d/1n5rRx16D6Y9UpO-6nFD5yqAIYgIcfuPc/view?usp=sharing).
+- **Download [PoseTrack21](https://github.com/anDoer/PoseTrack21?tab=readme-ov-file#how-to-get-the-dataset)**.
+- **Download [Occluded-PoseTrack ReID annotations](https://drive.google.com/file/d/1n5rRx16D6Y9UpO-6nFD5yqAIYgIcfuPc/view?usp=sharing)**.
 
 Our proposed dataset is derived from the [PoseTrack21](https://github.com/anDoer/PoseTrack21) dataset for multi-person pose tracking in videos.
 The original PoseTrack21 dataset should be first downloaded following these [instructions](https://github.com/anDoer/PoseTrack21?tab=readme-ov-file#how-to-get-the-dataset).
