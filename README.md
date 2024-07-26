@@ -11,6 +11,10 @@
 
 </div>
 
+ <p align="center">
+  <img src="assets/gifs/001735_posetrack21.gif" width="600" /> 
+</p>
+
 ✅ *Plug-and-play with any pose estimator or through manual keypoint selection*
 
 🚀 *Release of the **Occluded-PoseTrack-ReID** dataset with manual keypoint annotations + keypoints annotations for four existing ReID benchmarks* 
@@ -19,9 +23,6 @@ KPR can be easily integrated into any codebase to perform person retrieval, pers
 
 SOTA performance with the [SOLIDER](https://github.com/tinyvision/SOLIDER) human-centric foundation model as backbone.
 
- <p align="center">
-  <img src="assets/gifs/001735_posetrack21.gif" width="600" /> 
-</p>
 
 [![arXiv](https://img.shields.io/badge/arXiv-2407.18112-<COLOR>.svg)](https://arxiv.org/abs/2407.18112)
 >**[Keypoint Promptable Re-Identification, ECCV24](https://arxiv.org/abs/2407.18112)**
@@ -36,9 +37,6 @@ SOTA performance with the [SOLIDER](https://github.com/tinyvision/SOLIDER) human
 This project in build on top of [BPBreID](https://github.com/VlSomers/bpbreid).
 Below are the instructions to download our proposed Occluded-PoseTrack Re-Identification benchmark and the annotations for four existing datasets.
 
-<p align="center">
-  <img src="assets/gifs/001735_posetrack21.gif" width="600" /> 
-</p>
 
 ## Download the Occluded-PoseTrack Re-Identification dataset
 - **Download [PoseTrack21](https://github.com/anDoer/PoseTrack21?tab=readme-ov-file#how-to-get-the-dataset)**.
