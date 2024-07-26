@@ -1,11 +1,11 @@
 <div align="center">
   
-# Keypoint Promptable Re-Identification
+# KPR - Keypoint Promptable Re-Identification
 
 [![arXiv](https://img.shields.io/badge/arXiv-2407.18112-<COLOR>.svg)](https://arxiv.org/abs/2407.18112) [![Hippocratic License HL3-LAW-MEDIA-MIL-SOC-SV](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-LAW-MEDIA-MIL-SOC-SV&labelColor=5e2751&color=bc8c3d)](https://firstdonoharm.dev/version/3/0/law-media-mil-soc-sv.html)
 
 
-🔥 *The full codebase to reproduce the experiments will be released very shortly. Put a star to stay tuned* ⭐️
+🔥 *The full codebase to run KPR the provided weights will be released very shortly. Put a star to stay tuned* ⭐️
 
 🔥 *SOTA ReID model, with optional keypoint prompts, that is robust to multi-person occlusions* 🔥
 
