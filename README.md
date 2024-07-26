@@ -2,8 +2,36 @@
   
 # Keypoint Promptable Re-Identification
 
+[![arXiv](https://img.shields.io/badge/arXiv-2407.18112-<COLOR>.svg)](https://arxiv.org/abs/2407.18112) [![Hippocratic License HL3-LAW-MEDIA-MIL-SOC-SV](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-LAW-MEDIA-MIL-SOC-SV&labelColor=5e2751&color=bc8c3d)](https://firstdonoharm.dev/version/3/0/law-media-mil-soc-sv.html)
+
+
 🔥 *The full codebase to reproduce the experiments will be released very shortly. Put a star to stay tuned* ⭐️
+
+🔥 *SOTA ReID model, with optional keypoint prompts, that is robust to multi-person occlusions* 🔥
+
 </div>
+
+✅ *Plug-and-play with any pose estimator or through manual keypoint selection*
+
+🚀 *Release of the **Occluded-PoseTrack-ReID** dataset with manual keypoint annotations + keypoints annotations for four existing ReID benchmarks* 
+
+KPR can be easily integrated into any codebase to perform person retrieval, person search, multi-person (pose) tracking, multi-view multi-skeleton matching for 3D pose, ...
+
+SOTA performance with the [SOLIDER](https://github.com/tinyvision/SOLIDER) human-centric foundation model as backbone.
+
+ <p align="center">
+  <img src="assets/gifs/001735_posetrack21.gif" width="600" /> 
+</p>
+
+[![arXiv](https://img.shields.io/badge/arXiv-2407.18112-<COLOR>.svg)](https://arxiv.org/abs/2407.18112)
+>**[Keypoint Promptable Re-Identification, ECCV24](https://arxiv.org/abs/2407.18112)**
+>
+>Vladimir Somers, Alexandre Alahi, Christophe De Vleeschouwer
+>
+>[*arxiv 2407.18112*](https://arxiv.org/abs/2407.18112)
+>
+
+&nbsp;
 
 This project in build on top of [BPBreID](https://github.com/VlSomers/bpbreid).
 Below are the instructions to download our proposed Occluded-PoseTrack Re-Identification benchmark and the annotations for four existing datasets.
