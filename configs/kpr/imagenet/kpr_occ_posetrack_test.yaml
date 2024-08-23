@@ -1,0 +1,26 @@
+# Override default values in 'scripts/default_config.py'
+
+data:
+  sources: ['occ_PoseTrack21']
+  targets: ['occ_PoseTrack21']
+  height: 256
+  width: 128
+  norm_mean: [0.485, 0.456, 0.406]
+  norm_std: [0.229, 0.224, 0.225]
+
+model:
+  load_weights: "pretrained_models/kpr_occ_pt_IN_82.34_92.33_42323828.pth.tar"
+  pretrained: False
+  kpr:
+    backbone: swinv2_base_window12to16_192to256.ms_in22k_ft_in1k
+    keypoints:
+      prompt_masks: keypoints_gaussian
+      prompt_preprocess: cck8
+    masks:
+      dir: "pose_on_img_crops"
+      preprocess: "eight"
+  transreid:
+    sie_camera: False
+
+test:
+  evaluate: True

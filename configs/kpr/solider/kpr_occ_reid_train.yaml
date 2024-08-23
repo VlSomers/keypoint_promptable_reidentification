@@ -1,0 +1,26 @@
+# Override default values in 'scripts/default_config.py'
+
+data:
+  sources: ['market1501']
+  targets: ['market1501', 'occluded_reid']
+  height: 384
+  width: 128
+  norm_mean: [0.5, 0.5, 0.5]
+  norm_std: [0.5, 0.5, 0.5]
+
+model:
+  kpr:
+    backbone: "solider_swin_base_patch4_window7_224"
+    keypoints:
+      prompt_masks: keypoints_gaussian
+      prompt_preprocess: cck6
+    masks:
+      dir: "pifpaf_maskrcnn_filtering"
+      preprocess: "five_v"
+  transreid:
+    cam_num: 6
+
+train:
+  lr: 0.0002
+  reduced_lr: 0.0002
+  fixbase_epoch: 20

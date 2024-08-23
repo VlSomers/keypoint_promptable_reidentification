@@ -1,0 +1,22 @@
+# Override default values in 'scripts/default_config.py'
+
+data:
+  sources: ['occluded_duke']
+  targets: ['occluded_duke']
+  height: 256
+  width: 128
+  norm_mean: [0.485, 0.456, 0.406]
+  norm_std: [0.229, 0.224, 0.225]
+
+model:
+  kpr:
+    keypoints:
+      kp_dir: 'pifpaf_keypoints_pifpaf_maskrcnn_filtering_v3'
+      prompt_masks: keypoints_gaussian
+      prompt_preprocess: cck8
+      filter_out_no_skeletons: True
+    masks:
+      dir: "pifpaf_maskrcnn_filtering"
+      preprocess: "eight"
+  transreid:
+    cam_num: 8

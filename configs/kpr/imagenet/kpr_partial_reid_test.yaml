@@ -1,0 +1,25 @@
+# Override default values in 'scripts/default_config.py'
+
+data:
+  sources: ['market1501']
+  targets: ['market1501', 'partial_reid']
+  height: 256
+  width: 128
+  norm_mean: [0.485, 0.456, 0.406]
+  norm_std: [0.229, 0.224, 0.225]
+
+model:
+  load_weights: "pretrained_models/kpr_partial_reid_IN_86.0_90.0_41668493.pth.tar"
+  pretrained: False
+  kpr:
+    keypoints:
+      prompt_masks: keypoints_gaussian
+      prompt_preprocess: cck6
+    masks:
+      dir: "pifpaf_maskrcnn_filtering"
+      preprocess: "five_v"
+  transreid:
+    cam_num: 6
+
+test:
+  evaluate: True

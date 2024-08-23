@@ -1,0 +1,29 @@
+# Override default values in 'scripts/default_config.py'
+
+data:
+  sources: ['occluded_duke']
+  targets: ['occluded_duke']
+  height: 384
+  width: 128
+  norm_mean: [0.5, 0.5, 0.5]
+  norm_std: [0.5, 0.5, 0.5]
+
+model:
+  kpr:
+    backbone: "solider_swin_base_patch4_window7_224"
+    keypoints:
+      kp_dir: 'pifpaf_keypoints_pifpaf_maskrcnn_filtering_v3'
+      prompt_masks: keypoints_gaussian
+      prompt_preprocess: cck8
+      filter_out_no_skeletons: True
+    masks:
+      enabled: True
+      dir: "pifpaf_maskrcnn_filtering"
+      preprocess: "eight"
+  transreid:
+    cam_num: 8
+
+train:
+  lr: 0.0002
+  reduced_lr: 0.0002
+  fixbase_epoch: 10

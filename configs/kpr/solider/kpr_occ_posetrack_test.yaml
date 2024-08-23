@@ -1,0 +1,26 @@
+# Override default values in 'scripts/default_config.py'
+
+data:
+  sources: ['occ_PoseTrack21']
+  targets: ['occ_PoseTrack21']
+  height: 384
+  width: 128
+  norm_mean: [0.5, 0.5, 0.5]
+  norm_std: [0.5, 0.5, 0.5]
+
+model:
+  load_weights: "pretrained_models/kpr_occ_pt_SOLIDER_81.24_90.59_42326409.pth.tar"
+  pretrained: False
+  kpr:
+    backbone: "solider_swin_base_patch4_window7_224"
+    keypoints:
+      prompt_masks: keypoints_gaussian
+      prompt_preprocess: cck8
+    masks:
+      dir: "pose_on_img_crops"
+      preprocess: "eight"
+  transreid:
+    sie_camera: False
+
+test:
+  evaluate: True

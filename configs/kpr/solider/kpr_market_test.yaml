@@ -1,0 +1,30 @@
+# Override default values in 'scripts/default_config.py'
+
+data:
+  sources: ['market1501']
+  targets: ['market1501']
+  height: 384
+  width: 128
+  norm_mean: [0.5, 0.5, 0.5]
+  norm_std: [0.5, 0.5, 0.5]
+  transforms: ["rc", "re", "bipo"]
+
+model:
+  load_weights: "pretrained_models/kpr_market_SOLIDER_93.25_96.59_41453430.pth.tar"
+  pretrained: False
+  kpr:
+    backbone: "solider_swin_base_patch4_window7_224"
+    keypoints:
+      prompt_masks: keypoints_gaussian
+      prompt_preprocess: cck6
+    masks:
+      dir: "pifpaf_maskrcnn_filtering"
+      preprocess: "five_v"
+  transreid:
+    cam_num: 6
+    sie_camera: False
+  solider:
+    semantic_weight: -1.0
+
+test:
+  evaluate: True
