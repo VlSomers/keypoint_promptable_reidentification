@@ -44,7 +44,7 @@ def get_default_config():
     )  # Choose experiment manager client to use or simply use disk dump / matplotlib
     cfg.project.logger.use_clearml = False
     cfg.project.logger.use_tensorboard = False
-    cfg.project.logger.use_wandb = True
+    cfg.project.logger.use_wandb = False
     cfg.project.logger.matplotlib_show = False
     cfg.project.logger.save_disk = True  # save images to disk
     cfg.project.job_id = random.randint(0, 1_000_000_000)
