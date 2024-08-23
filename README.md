@@ -78,8 +78,8 @@ https://ecotrust-canada.github.io/markdown-toc/
 
 
 ## Update
-- [2024.08.23] Full release
-- [2024.07.10] We release the first version of our codebase. Please update frequently as we will add more documentation and code improvement during the next few weeks.
+- [2024.08.23] Full codebase release
+- [2024.07.10] Dataset and weights release
 
 ## What's next
 We plan on extending this codebase in the near future, put a star and stay updated for future changes:
