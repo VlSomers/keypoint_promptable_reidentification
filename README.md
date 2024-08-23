@@ -359,7 +359,6 @@ I will try to discuss here various implementation choices, future research direc
 1. SOLIDER was hard to fine-tune, the “semantic_weight" parameter did not have much impact. It was necessary to freeze the keypoint tokenizer for
 the first 20 epochs (with the `train.fixbase_epoch` config) and use a small learning rate.
 2. The codebase has undergone big refactoring before public release and the provided training configuration might be incomplete, please let me know if you cannot reproduce the reported results.
-3. Configuration parameters inside [default_config.py](torchreid/scripts/default_config.py) are as mess, but refactoring would render the provided model weights unusable since the parameters dict is loaded from the model ".pth" file.
 
 ## Questions and suggestions
 If you have any question/suggestion, or find any bug/issue with the code, please raise a GitHub issue in this repository, I'll be glab to help you as much as I can!
