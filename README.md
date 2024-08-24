@@ -195,6 +195,9 @@ Make sure [conda](https://www.anaconda.com/distribution/) is installed.
 - **Download [PoseTrack21](https://github.com/anDoer/PoseTrack21?tab=readme-ov-file#how-to-get-the-dataset)**.
 - **Download [Occluded-PoseTrack ReID annotations](https://drive.google.com/file/d/1B1v11Yw56AIxxzDHnnymi4NPkNRDYkvJ/view?usp=sharing)**.
 
+> [!NOTE]
+> Unfortunately we don't have the right to host and share a subset of PoseTrack21. This is why PoseTrack21 should be first downloaded from the [original repository](https://github.com/anDoer/PoseTrack21?tab=readme-ov-file#how-to-get-the-dataset) and then turned into a ReID dataset with our script.
+
 Our proposed dataset is derived from the [PoseTrack21](https://github.com/anDoer/PoseTrack21) dataset for multi-person pose tracking in videos.
 The original PoseTrack21 dataset should be first downloaded following these [instructions](https://github.com/anDoer/PoseTrack21?tab=readme-ov-file#how-to-get-the-dataset).
 We also provide json files that specify how the pose tracking annotations should be turned into our ReID dataset.
