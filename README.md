@@ -185,6 +185,9 @@ Make sure [conda](https://www.anaconda.com/distribution/) is installed.
     # install dependencies
     # make sure `which python` and `which pip` point to the correct path
     pip3 install -r requirements.txt
+
+    # (optional) install openpifpaf if you want to generate your own human parsing annotations
+    # this is not required for most installations since human parsing labels are provided for download
     pip3 install -e "git+https://github.com/PbTrack/openpifpaf@pbtrack#egg=openpifpaf[test]"
     
     # install torchreid (don't need to re-build it if you modify the source code)
