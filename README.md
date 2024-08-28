@@ -22,7 +22,8 @@ SOTA performance with the [SOLIDER](https://github.com/tinyvision/SOLIDER) human
 </div>
 
  <p align="center">
-  <img src="assets/gifs/001735_posetrack21.gif" width="600" /> 
+  <img src="assets/gifs/001735_posetrack21.gif" width="400" />
+  <img src="assets/gifs/001001-posetrack21.gif" width="400" />
 </p>
 
 >**[Keypoint Promptable Re-Identification, ECCV24](https://arxiv.org/abs/2407.18112)**
