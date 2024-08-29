@@ -323,6 +323,10 @@ For instance, for the Occluded-Duke dataset with the SOLIDER pretrained weights:
 
 Make sure to [download and install the human parsing labels](https://github.com/VlSomers/person-reid/tree/dev-vlad?tab=readme-ov-file#download-annotations-for-existing-datasets) for your training dataset before running this command.
 
+> [!NOTE]
+> This codebase has undergone a big refactoring for the public release. If you cannot replicate some of the reported performance, there is very likely an issue with the training configs, so please open GitHub issue.
+
+
 ### Visualization tools
 The ranking visualization tool is activated by default, with the `test.visrank` config set to `True` in the [default_config.py](torchreid/scripts/default_config.py) file.
 As illustrated below, this tool displays the Top-K ranked samples as rows (K can be set via `test.visrank_topk`). The first row with blue background is the query, and the following green/red rows indicated correct/incorrect matches.
