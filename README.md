@@ -84,7 +84,7 @@ https://ecotrust-canada.github.io/markdown-toc/
 
 ## What's next
 We plan on extending this codebase in the near future, put a star and stay updated for future changes:
-- release of the multi-person pose tracking codebase that is based on [TrackLab](https://github.com/TrackingLaboratory/tracklab).
+- [ ] release of the multi-person pose tracking codebase that is based on [TrackLab](https://github.com/TrackingLaboratory/tracklab).
 
 ## 🚀 Demo
 We provide a simple [demo script](demo.py) to demonstrate how to use KPR with the provided pre-trained weights to compute the similarity score between multiple person images and therefore perform person re-identification. 
