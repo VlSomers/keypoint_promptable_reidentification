@@ -87,13 +87,16 @@ We plan on extending this codebase in the near future, put a star and stay updat
 - [ ] release of the multi-person pose tracking codebase that is based on [TrackLab](https://github.com/TrackingLaboratory/tracklab).
 
 ## 🚀 Demo
-We provide a simple [demo script](demo.py) to demonstrate how to use KPR with the provided pre-trained weights to compute the similarity score between multiple person images and therefore perform person re-identification. 
+We provide a simple [demo script](demo.py) to demonstrate how to use KPR with the provided pre-trained weights to perform person re-identification. 
+Given an input sample (image crop + prompt), KPT outputs (1) part-based embeddings and (2) visibility scores for each part, that are then used to compute a similarity scores between pairs of samples.
+The image below depicts the similarity matrix between 6 samples of 3 different persons.
+Colored dots illustrates positive keypoints prompts and red dots are negative prompts.
+Colored heatmaps denotes the output part attention maps of KPR, illustrating where "the model looks at". 
 The keypoint prompts are optional and can be used only when necessary, e.g. when there is a multi-person occlusion scenario. 
 More information is provided in the demo file.
 
 <p align="center">
-  <img src="assets/demo/results/distance_matrix.png" width="250" height="250" />
-  <img src="assets/demo/results/samples_grid.png" width="250" height="250" />
+  <img src="assets/demo/results/distance_matrix.png" width="400"/>
 </p>
 
 ## Introduction to Keypoint Promptable Re-Identification
