@@ -5,7 +5,7 @@
 <div align="center">
  
 # KPR: Keypoint Promptable Re-Identification
-[[Paper](https://arxiv.org/abs/2407.18112)] [[GitHub](https://github.com/VlSomers/keypoint_promptable_reidentification)] [[Demo](torchreid/demo.py)] [[Video](https://www.youtube.com/watch?v=IatrRfXrdnE)]
+[[Paper](https://arxiv.org/abs/2407.18112)] [[GitHub](https://github.com/VlSomers/keypoint_promptable_reidentification)] [[Demo](torchreid/demo.py)] [[Video](https://www.youtube.com/watch?v=IatrRfXrdnE)] [[BPBreID](https://github.com/VlSomers/bpbreid)] [[TrackLab](https://github.com/TrackingLaboratory/tracklab)]
 
 [![arXiv](https://img.shields.io/badge/arXiv-2407.18112-<COLOR>.svg)](https://arxiv.org/abs/2407.18112) [![Hippocratic License HL3-LAW-MEDIA-MIL-SOC-SV](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-LAW-MEDIA-MIL-SOC-SV&labelColor=5e2751&color=bc8c3d)](https://firstdonoharm.dev/version/3/0/law-media-mil-soc-sv.html)
 
