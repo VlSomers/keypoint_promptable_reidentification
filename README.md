@@ -370,9 +370,10 @@ Please have a look at our other works on re-identification and sport video analy
 
 ## Notes
 I will try to discuss here various implementation choices, future research direction, open issues, etc. Feel free to open a Github issue if you have any question or suggestion.
-1. SOLIDER was hard to fine-tune, the “semantic_weight" parameter did not have much impact. It was necessary to freeze the keypoint tokenizer for
+1. About BIPO data augmentation: Automatically generating keypoints prompts and human parsing labels for multi-person occluded images using external models (OpenPifPaf, SAM, etc) is challenging and often imperfect, whereas these models are extremely accurate for single-person images. Hence, using BIPO to merge two single-person images to create a new occluded image with the corresponding labels (human parsing masks + keypoint prompts) proves more reliable than directly labeling real multi-person occluded images.
+2. SOLIDER was hard to fine-tune, the “semantic_weight" parameter did not have much impact. It was necessary to freeze the keypoint tokenizer for
 the first 20 epochs (with the `train.fixbase_epoch` config) and use a small learning rate.
-2. The codebase has undergone big refactoring before public release and the provided training configuration might be incomplete, please let me know if you cannot reproduce the reported results.
+3. The codebase has undergone big refactoring before public release and the provided training configuration might be incomplete, please let me know if you cannot reproduce the reported results.
 
 ## Questions and suggestions
 If you have any question/suggestion, or find any bug/issue with the code, please raise a GitHub issue in this repository, I'll be glab to help you as much as I can!
