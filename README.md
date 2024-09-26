@@ -347,7 +347,7 @@ If you need more information about the visualization tool, fell free to open an 
 ## Further work
 There are plenty of ideas to improve KPR, feel free to explore them:
 1. Improve KPR cross-domain performance. 
-2. Explore the use of KPR to do retrieval based on a single selected body part (e.g. click on the boots of a person and retrieve all persons with similar boots). 
+2. Investigate using KPR to perform retrieval based on a specific body part (e.g., click on a person’s boots to find others with similar boots).
 3. Make KPR work with various type of input prompt: bboxes, segmentation masks, language, etc. 
 4. Study how KPR would perform with few non semantic keypoints (a few clicks on any part of the target body). 
 5. Build a more difficult dataset, with images from various domains and complex occlusions involving both humans and objects. 
