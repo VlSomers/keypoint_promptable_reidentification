@@ -84,7 +84,7 @@ https://ecotrust-canada.github.io/markdown-toc/
 
 ## What's next
 We plan on extending this codebase in the near future, put a star and stay updated for future changes:
-- [ ] we plan to release soon the feature for joint multi-dataset training. Additionnaly, we will release some KPR weights jointly trained on multiple reid/tracking datasets, to increase its cross-domain performance.
+- [ ] we plan to release soon the option for joint training on multiple datasets. Additionnaly, we will release some KPR weights jointly trained on multiple reid/tracking datasets, to increase its cross-domain performance.
 - [ ] release of the multi-person pose tracking codebase that is based on [TrackLab](https://github.com/TrackingLaboratory/tracklab).
 
 ## 🚀 Demo
