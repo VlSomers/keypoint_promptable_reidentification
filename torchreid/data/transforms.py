@@ -38,6 +38,7 @@ def build_transforms(
     mask_filtering_threshold = 0.3,
     background_computation_strategy = 'threshold',
     train_dir="",
+    verbose=True,
     **kwargs
 ):
     """Builds train and test transform functions.
@@ -72,18 +73,22 @@ def build_transforms(
         norm_std = [0.229, 0.224, 0.225] # imagenet std
     normalize = Normalize(mean=norm_mean, std=norm_std, max_pixel_value=255.0)
 
-    print('Building train transforms ...')
+    if verbose:
+        print('Building train transforms ...')
     transform_tr = []
 
     if 'resize_longest_side' in transforms or 'rl' in transforms:
-        print('+ resize longest side to {}'.format(height))
+        if verbose:
+            print('+ resize longest side to {}'.format(height))
         transform_tr += [ResizeLongestSide(height)]
     else:
-        print('+ resize to {}x{}'.format(height, width))
+        if verbose:
+            print('+ resize to {}x{}'.format(height, width))
         transform_tr += [Resize(height, width, interpolation=config.data.resize.interpolation)]
 
     if 'bipo' in transforms:
-        print('+ BIPO (random occlusion)')
+        if verbose:
+            print('+ BIPO (random occlusion)')
         transform_tr += [BIPO(path=config.data.bipo.path,
                               im_shape=[config.data.height, config.data.width],
                               p=config.data.bipo.p,
@@ -94,17 +99,20 @@ def build_transforms(
                               )]
 
     if 'random_flip' in transforms or 'rf' in transforms:
-        print('+ random flip')
+        if verbose:
+            print('+ random flip')
         transform_tr += [HorizontalFlip()]
 
     if 'random_crop' in transforms or 'rc' in transforms:
-        print('+ random crop')
+        if verbose:
+            print('+ random crop')
         pad_size = 10
         transform_tr += [PadIfNeeded(min_height=height+pad_size*2, min_width=width+pad_size*2, border_mode=cv2.BORDER_CONSTANT, value=0, mask_value=0, p=1),
                          RandomCrop(height, width, p=1)]
 
     if 'color_jitter' in transforms or 'cj' in transforms:
-        print('+ color jitter')
+        if verbose:
+            print('+ color jitter')
         transform_tr += [
             ColorJitter(brightness=config.data.cj.brightness,
                         contrast=config.data.cj.contrast,
@@ -114,12 +122,13 @@ def build_transforms(
                         p=config.data.cj.p,
                         )
         ]
-
-    print('+ normalization (mean={}, std={})'.format(norm_mean, norm_std))
+    if verbose:
+        print('+ normalization (mean={}, std={})'.format(norm_mean, norm_std))
     transform_tr += [normalize]
 
     if 'random_erase' in transforms or 're' in transforms:
-        print('+ random erase')
+        if verbose:
+            print('+ random erase')
         transform_tr += [CoarseDropout(min_holes=1, max_holes=1,  # FIXME: is removing keypoints, should set them invisible
                                        min_height=int(height*0.15), max_height=int(height*0.65),
                                        min_width=int(width*0.15), max_width=int(width*0.65),
@@ -128,13 +137,15 @@ def build_transforms(
     if 'pad_shortest_edge' in transforms or 'ps' in transforms:
         transform_tr += [PadIfNeeded(min_height=height, min_width=height)]
 
-    print('+ to torch tensor of range [0, 1]')
+    if verbose:
+        print('+ to torch tensor of range [0, 1]')
     transform_tr += [ToTensorV2()]
 
-    print('Building test transforms ...')
-    print('+ resize to {}x{}'.format(height, width))
-    print('+ to torch tensor of range [0, 1]')
-    print('+ normalization (mean={}, std={})'.format(norm_mean, norm_std))
+    if verbose:
+        print('Building test transforms ...')
+        print('+ resize to {}x{}'.format(height, width))
+        print('+ to torch tensor of range [0, 1]')
+        print('+ normalization (mean={}, std={})'.format(norm_mean, norm_std))
 
     transform_te = [
         Resize(height, width),
@@ -142,7 +153,8 @@ def build_transforms(
     ]
 
     if 'bipo_test' in transforms or 'bipot' in transforms:
-        print('+ BIPO test (random occlusion)')
+        if verbose:
+            print('+ BIPO test (random occlusion)')
         transform_te += [BIPO(path=config.data.bipo.path,
                               im_shape=[config.data.height, config.data.width],
                               p=config.data.bipo.p,
@@ -175,7 +187,8 @@ def build_transforms(
 
         compose_kwargs["keypoint_params"] = keypoint_params
 
-        print('+ use add background mask')
+        if verbose:
+            print('+ use add background mask')
         kp_target_transform += [AddBackgroundMask('threshold', -1, 0.05)]
         if config.model.promptable_trans.pose_encoding_strategy == "embed_heatmaps_patches":
             # just cat a background mask that is 1 minus the sum of the keypoints heatmaps.
@@ -194,24 +207,27 @@ def build_transforms(
         transform_te += [PermuteMasksDim()]
 
         if remove_background_mask:  # ISP masks
-            print('+ use remove background mask')
+            if verbose:
+                print('+ use remove background mask')
             # remove background before performing other transforms
             transform_tr = [RemoveBackgroundMask()] + transform_tr
             transform_te = [RemoveBackgroundMask()] + transform_te
 
             # Derive background mask from all foreground masks once other tasks have been performed
-            print('+ use add background mask')
+            if verbose:
+                print('+ use add background mask')
             transform_tr += [AddBackgroundMask('sum')]
             transform_te += [AddBackgroundMask('sum')]
         else:  # Pifpaf confidence based masks
             if masks_preprocess != 'none':
-                print('+ masks preprocess = {}'.format(masks_preprocess))
+                if verbose:
+                    print('+ masks preprocess = {}'.format(masks_preprocess))
                 masks_preprocess_transform = masks_preprocess_all[masks_preprocess]
                 # mask grouping as first transform to reduce tensor size asap and speed up other transforms
                 transform_tr = [masks_preprocess_transform()] + transform_tr
                 transform_te = [masks_preprocess_transform()] + transform_te
-
-            print('+ use add background mask')
+            if verbose:
+                print('+ use add background mask')
             transform_tr += [AddBackgroundMask(background_computation_strategy, softmax_weight, mask_filtering_threshold)]
             transform_te += [AddBackgroundMask(background_computation_strategy, softmax_weight, mask_filtering_threshold)]
 

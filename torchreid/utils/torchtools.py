@@ -259,7 +259,7 @@ def count_num_param(model):
     return num_param
 
 
-def load_pretrained_weights(model, weight_path):
+def load_pretrained_weights(model, weight_path, verbose=True):
     r"""Loads pretrained weights to model.
 
     Features::
@@ -310,11 +310,12 @@ def load_pretrained_weights(model, weight_path):
             format(weight_path)
         )
         if len(discarded_layers) > 0:
-            print(
-                '** The following layers are discarded '
-                'due to unmatched keys or layer size: {}'.
-                format(discarded_layers)
-            )
+            if verbose:
+                print(
+                    '** The following layers are discarded '
+                    'due to unmatched keys or layer size: {}'.
+                    format(discarded_layers)
+                )
 
 
 # Copied from torch.utils.data._utils.collate.default_collate

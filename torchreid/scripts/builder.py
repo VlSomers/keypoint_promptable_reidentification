@@ -133,7 +133,7 @@ def reset_config(cfg, args):
     if args.job_id:
         cfg.project.job_id = args.job_id
 
-def build_config(args=None, config=None, config_path=None, display_diff=False):
+def build_config(args=None, config=None, config_path=None, display_diff=False, training_enabled=True):
     cfg = get_default_config()
     default_cfg_copy = cfg.clone()
 
@@ -207,12 +207,13 @@ def build_config(args=None, config=None, config_path=None, display_diff=False):
 
     # init save dir
     cfg.data.save_dir = os.path.join(cfg.data.save_dir, str(cfg.project.job_id))
-    os.makedirs(cfg.data.save_dir)
-    print(
-        "Save dir created at {}".format(
-            os.path.join(pathlib.Path().resolve(), cfg.data.save_dir)
+    if training_enabled:
+        os.makedirs(cfg.data.save_dir)
+        print(
+            "Save dir created at {}".format(
+                os.path.join(pathlib.Path().resolve(), cfg.data.save_dir)
+            )
         )
-    )
     return cfg
 
 
@@ -248,7 +249,7 @@ def build_torchreid_model_engine(cfg):
     return engine, model
 
 
-def build_model(cfg, num_train_pids=1, cam_num=0, view=0):
+def build_model(cfg, num_train_pids=1, cam_num=0, view=0, verbose=True):
     model = torchreid.models.build_model(
         name=cfg.model.name,
         num_classes=num_train_pids,
@@ -264,7 +265,7 @@ def build_model(cfg, num_train_pids=1, cam_num=0, view=0):
         num_params, flops = compute_model_complexity(model, cfg)
         print("Model complexity: params={:,} flops={:,}".format(num_params, flops))
     if cfg.model.load_weights and check_isfile(cfg.model.load_weights):
-        load_pretrained_weights(model, cfg.model.load_weights)
+        load_pretrained_weights(model, cfg.model.load_weights, verbose=verbose)
     if cfg.use_gpu:
         model = nn.DataParallel(model).cuda()
     return model

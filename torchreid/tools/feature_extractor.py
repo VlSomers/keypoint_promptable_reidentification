@@ -69,7 +69,7 @@ class KPRFeatureExtractor(object):
 
         # Build model
         if model is None:
-            model = build_model(cfg)
+            model = build_model(cfg, verbose=verbose)
 
         model.eval()
 
@@ -91,6 +91,7 @@ class KPRFeatureExtractor(object):
             softmax_weight=cfg.model.kpr.masks.softmax_weight,
             background_computation_strategy=cfg.model.kpr.masks.background_computation_strategy,
             mask_filtering_threshold=cfg.model.kpr.masks.mask_filtering_threshold,
+            verbose=verbose,
         )
 
         to_pil = T.ToPILImage()
